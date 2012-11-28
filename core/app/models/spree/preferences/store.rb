@@ -51,7 +51,7 @@ module Spree::Preferences
 
     def persist(cache_key, value, type)
       # puts "AF: persist #{cache_key} #{value} #{type}"
-      return unless should_persist?
+      # return unless should_persist?
 
       preference = Spree::Preference.find_or_initialize_by_key(cache_key)
       preference.value = value
@@ -61,7 +61,7 @@ module Spree::Preferences
 
     def destroy(cache_key)
       # puts "AF: destroy #{cache_key}"
-      return unless should_persist?
+      # return unless should_persist?
 
       preference = Spree::Preference.find_by_key(cache_key)
       preference.destroy if preference
